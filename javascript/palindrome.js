@@ -1,3 +1,19 @@
+export const hasWordThatIsPalindrome = (input) => {
+    if (typeof input !== 'string') {
+        return false;
+    }
+
+    let inputs = input.split(' ');
+
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].length > 0 && isPalindrome(inputs[i])) {
+            return true;
+        }
+    }
+
+    return false;
+};
+
 export const isPalindrome = (input) => {
     if (typeof input !== 'string') {
         return false;
