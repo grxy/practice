@@ -1,4 +1,31 @@
-import { hasWordThatIsPalindrome, isPalindrome } from './palindrome';
+import { hasPalindromeOfLength, hasWordThatIsPalindrome, isPalindrome } from './palindrome';
+
+describe('hasPalindromeOfLength', () => {
+    var tests = [
+        ['', 0, false],
+        ['', 1, false],
+        ['x', 1, true],
+        ['xyx', 1, true],
+        ['xyx', 4, false],
+        ['racecar', 2, false],
+        ['racecar', 6, false],
+        ['racecar', 7, true],
+        [null, 0, false],
+        [undefined, 0, false],
+        [NaN, 0, false],
+        [{}, 0, false],
+        [1234, 0, false],
+        [true, 0, false]
+    ];
+
+    tests.forEach((test) => {
+        let [input, pLen, output] = test;
+
+        it(`should return ${output} when called with ${JSON.stringify(input)}, ${pLen}`, () => {
+            expect(hasPalindromeOfLength(input, pLen)).toBe(output);
+        });
+    });
+});
 
 describe('hasWordThatIsPalindrome', () => {
     var tests = [
@@ -27,7 +54,7 @@ describe('isPalindrome', () => {
     var tests = [
         ['racecar', true],
         ['poop', true],
-        ['', true],
+        ['', false],
         ['fun', false],
         [null, false],
         [undefined, false],
