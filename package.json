@@ -1,0 +1,53 @@
+{
+  "name": "practice",
+  "version": "0.0.0",
+  "description": "practice problems",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grxy/practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grxy/practice/issues"
+  },
+  "homepage": "https://github.com/grxy/practice#readme",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
+    "babel-eslint": "^6.1.2",
+    "babel-jest": "^14.1.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^3.3.1",
+    "eslint-plugin-react": "^6.1.2",
+    "jest": "^14.1.0",
+    "jest-cli": "^14.1.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "jest": {
+    "automock": false,
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    },
+    "modulePaths": [
+      "src"
+    ],
+    "testRegex": "test.js$",
+    "verbose": true
+  }
+}
