@@ -41,13 +41,15 @@ export const isPalindrome = (input) => {
         return false;
     }
 
-    let len = input.length;
+    const len = input.length;
 
     if (len === 0) {
         return false;
     }
+    
+    const condition = Math.floor(len / 2);
 
-    for (var i = 0; i < Math.floor(len / 2); i++) {
+    for (var i = 0; i < condition; i++) {
         if (input[i] !== input[len - i - 1]) {
             return false;
         }
