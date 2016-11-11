@@ -38,6 +38,7 @@ jspm_packages
 
 a.out
 
+/out/
 *.class
 
 # Mobile Tools for Java (J2ME)
@@ -51,4 +52,15 @@ a.out
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-/bin/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+.idea
+.idea
