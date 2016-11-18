@@ -1,4 +1,4 @@
-import ValuePair from './ValuePair';
+import ValuePair from 'ValuePair';
 
 describe('ValuePair', () => {
     const key = Math.random();
@@ -19,7 +19,7 @@ describe('ValuePair', () => {
 
     describe('toString', () => {
         it('returns a string representation', () => {
-            expect(sut.toString()).toBe(`[${key} - ${value}]`)
+            expect(sut.toString()).toBe(`[${key} - ${value}]`);
         });
     });
 });

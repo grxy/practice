@@ -108,7 +108,7 @@ for (const tableKey in tables) {
 
                     it('returns undefined when the key does not exist', () => {
                         table.remove('testrandom3');
-                        expect(table.remove('testrandom3')).toBe(undefined)
+                        expect(table.remove('testrandom3')).toBe(undefined);
                     });
                 });
             });
