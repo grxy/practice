@@ -1,3 +1,5 @@
+const noHash = () => 0;
+
 const loseloseHashCode = (key) => {
     let hash = 0;
 
@@ -8,4 +10,4 @@ const loseloseHashCode = (key) => {
     return hash % 37;
 };
 
-export { loseloseHashCode };
+export { loseloseHashCode, noHash };

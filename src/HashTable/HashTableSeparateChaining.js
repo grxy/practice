@@ -1,25 +1,8 @@
+import HashTable from './HashTable';
 import LinkedList from 'LinkedList';
 import ValuePair from 'ValuePair';
 
-class HashTableSeparateChaining {
-    constructor(hash) {
-        if (typeof hash !== 'function') {
-            throw new Error('hash must be a function');
-        }
-
-        this.hash = (key) => {
-            if (typeof key !== 'string') {
-                throw new Error('key must be a string');
-            }
-
-            return hash(key);
-        };
-    }
-
-    table = []
-
-    has = (key) => this.get(key) !== undefined
-
+class HashTableSeparateChaining extends HashTable {
     get = (key) => {
         const index = this.hash(key);
 

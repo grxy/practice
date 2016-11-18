@@ -8,26 +8,67 @@ for (const tableKey in tables) {
     const HashTable = tables[tableKey];
 
     describe(HashTable.name, () => {
+        it('throws when initialized with a non-function', () => {
+            const throws = () => {
+                table = new HashTable({});
+            };
+
+            expect(throws).toThrow();
+        });
+
         for (const hashKey in hashes) {
             hash = hashes[hashKey];
 
-            describe(`with ${hash.name}() hash function`, () => {
+            describe(`with ${hashKey}() hash function`, () => {
                 beforeEach(() => {
                     table = new HashTable(hash);
                 });
 
+                describe('clear()', () => {
+                    beforeEach(() => {
+                        table.put('test5', true);
+                    });
+
+                    it('clears the stack', () => {
+                        expect(table.has('test5')).toBe(true);
+                        table.clear();
+                        expect(table.has('test5')).toBe(false);
+                    });
+
+                    it('creates a new table array', () => {
+                        let oldTable = table.table;
+                        table.clear();
+                        expect(table.table).not.toBe(oldTable);
+                    });
+                });
+
                 describe('get()', () => {
                     it('gets what is put', () => {
-                        const key = 'key';
+                        const key = 'test1';
                         const value = 'value';
 
                         table.put(key, value);
-
                         expect(table.get(key)).toBe(value);
                     });
 
                     it('does not contain what has not been put', () => {
-                        expect(table.get('blah')).toBe(undefined);
+                        expect(table.get('test3')).toBe(undefined);
+                    });
+                });
+
+                describe('hash()', () => {
+                    it('returns the hased value of a string', () => {
+                        expect(table.hash('test')).toBe(hash('test'));
+                    });
+
+                    [{}, 123, true, undefined].forEach((value) => {
+                        it(`throws when called with ${typeof value} (${JSON.stringify(value)})`, () => {
+                            const throws = () => {
+                                table.hash(value);
+                            };
+
+                            expect(throws).toThrow();
+                        });
                     });
                 });
 
@@ -38,29 +79,36 @@ for (const tableKey in tables) {
 
                         table.put(key, value);
 
-                        expect(table.has(key)).not.toBe(undefined);
+                        expect(table.has(key)).toBe(true);
                     });
 
                     it('does not contain what has not been put', () => {
-                        expect(table.has('key')).toBe(false);
+                        expect(table.has('test9')).toBe(false);
                     });
                 });
 
                 describe('remove()', () => {
-                    const key = 'test';
-                    const value = 'test';
+                    const key = 'testrandom3';
+                    const value = true;
 
                     beforeEach(() => {
-                        table.put(key, value);
+                        table.put('testrandom2', true);
+                        table.put('testrandom3', true);
                     });
 
                     it('removes the element by key', () => {
-                        table.remove(key);
-                        expect(table.has(key)).toBe(false);
+                        table.remove('testrandom3');
+                        expect(table.has('testrandom3')).toBe(false);
                     });
 
                     it('returns the removed element', () => {
+                        table.put(key, value);
                         expect(table.remove(key)).toBe(value);
+                    });
+
+                    it('returns undefined when the key does not exist', () => {
+                        table.remove('testrandom3');
+                        expect(table.remove('testrandom3')).toBe(undefined)
                     });
                 });
             });

@@ -1,6 +1,6 @@
 import { comboSumsToX } from './sum';
 
-describe('comboSumsToX', () => {
+xdescribe('comboSumsToX', () => {
     var tests = [
         [[1, 2, 3], 1, true],
         [[3, 2, 1], 1, true],
@@ -20,7 +20,7 @@ describe('comboSumsToX', () => {
     tests.forEach((test) => {
         let [input, x, output] = test;
 
-        xit(`returns ${output} when called with ${JSON.stringify(input)}, ${x}`, () => {
+        it(`returns ${output} when called with ${JSON.stringify(input)}, ${x}`, () => {
             expect(comboSumsToX(input, x)).toBe(output);
         });
     });

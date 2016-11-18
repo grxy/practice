@@ -15,6 +15,10 @@ class HashTable {
 
     table = []
 
+    clear = () => {
+        this.table = [];
+    }
+
     has = (key) => this.get(key) !== undefined
 
     get = (key) => this.table[this.hash(key)]
