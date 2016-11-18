@@ -4,6 +4,8 @@
   "description": "practice problems",
   "main": "index.js",
   "scripts": {
+    "coverage": "coveralls < coverage/lcov.info",
+    "lint": "eslint src",
     "test": "jest"
   },
   "repository": {
@@ -17,21 +19,22 @@
   },
   "homepage": "https://github.com/grxy/practice#readme",
   "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-core": "^6.13.2",
-    "babel-eslint": "^6.1.2",
-    "babel-jest": "^14.1.0",
-    "babel-loader": "^6.2.5",
-    "babel-polyfill": "^6.13.0",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^17.0.2",
+    "babel-loader": "^6.2.7",
+    "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-0": "^6.5.0",
-    "eslint": "^3.3.1",
-    "eslint-plugin-react": "^6.1.2",
-    "jest": "^14.1.0",
-    "jest-cli": "^14.1.0",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "coveralls": "^2.11.15",
+    "eslint": "^3.10.2",
+    "eslint-plugin-react": "^6.7.1",
+    "jest": "^17.0.3",
+    "jest-cli": "^17.0.3",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   },
   "jest": {
     "automock": false,
