@@ -21,7 +21,7 @@ describe('hasPalindromeOfLength', () => {
     tests.forEach((test) => {
         let [input, pLen, output] = test;
 
-        it(`should return ${output} when called with ${JSON.stringify(input)}, ${pLen}`, () => {
+        it(`returns ${output} when called with ${JSON.stringify(input)}, ${pLen}`, () => {
             expect(hasPalindromeOfLength(input, pLen)).toBe(output);
         });
     });
@@ -44,7 +44,7 @@ describe('hasWordThatIsPalindrome', () => {
     tests.forEach((test) => {
         let [input, output] = test;
 
-        it(`should return ${output} when called with ${JSON.stringify(input)}`, () => {
+        it(`returns ${output} when called with ${JSON.stringify(input)}`, () => {
             expect(hasWordThatIsPalindrome(input)).toBe(output);
         });
     });
@@ -67,7 +67,7 @@ describe('isPalindrome', () => {
     tests.forEach((test) => {
         let [input, output] = test;
 
-        it(`should return ${output} when called with ${JSON.stringify(input)}`, () => {
+        it(`returns ${output} when called with ${JSON.stringify(input)}`, () => {
             expect(isPalindrome(input)).toBe(output);
         });
     });

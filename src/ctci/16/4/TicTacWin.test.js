@@ -27,7 +27,7 @@ describe('TicTacWin', () => {
         ];
 
         boards.forEach((board) => {
-            it('should contain a winning combination', () => {
+            it('contains a winning combination', () => {
                 expect(TicTacWin(board)).toBe(true);
             });
         });
@@ -49,7 +49,7 @@ describe('TicTacWin', () => {
         ];
 
         boards.forEach((board) => {
-            it('should not contain a winning combination', () => {
+            it('does not contain a winning combination', () => {
                 expect(TicTacWin(board)).toBe(false);
             });
         });

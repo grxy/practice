@@ -17,7 +17,7 @@ for (const tableKey in tables) {
                 });
 
                 describe('get()', () => {
-                    it('should get what is put', () => {
+                    it('gets what is put', () => {
                         const key = 'key';
                         const value = 'value';
 
@@ -26,13 +26,13 @@ for (const tableKey in tables) {
                         expect(table.get(key)).toBe(value);
                     });
 
-                    it('should not contain what has not been put', () => {
+                    it('does not contain what has not been put', () => {
                         expect(table.get('blah')).toBe(undefined);
                     });
                 });
 
                 describe('put()', () => {
-                    it('should contain what is put', () => {
+                    it('contains what is put', () => {
                         const key = 'testkey';
                         const value = 'testvalue';
 
@@ -41,7 +41,7 @@ for (const tableKey in tables) {
                         expect(table.has(key)).not.toBe(undefined);
                     });
 
-                    it('should not contain what has not been put', () => {
+                    it('does not contain what has not been put', () => {
                         expect(table.has('key')).toBe(false);
                     });
                 });
@@ -54,12 +54,12 @@ for (const tableKey in tables) {
                         table.put(key, value);
                     });
 
-                    it('should remove the element by key', () => {
+                    it('removes the element by key', () => {
                         table.remove(key);
                         expect(table.has(key)).toBe(false);
                     });
 
-                    it('should return the element', () => {
+                    it('returns the removed element', () => {
                         expect(table.remove(key)).toBe(value);
                     });
                 });
