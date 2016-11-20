@@ -1,4 +1,4 @@
-import maxStockProfit from './max-stock-profit';
+import maxStockProfit from './maxStockProfit';
 
 describe('maxStockProfit', () => {
     const cases = [

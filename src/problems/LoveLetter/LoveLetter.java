@@ -1,4 +1,4 @@
-package pramp;
+package problems.LoveLetter;
 
 public class LoveLetter {
     public static boolean isReproducible(String letter, String newspaper) {
