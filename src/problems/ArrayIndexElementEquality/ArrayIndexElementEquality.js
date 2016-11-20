@@ -16,7 +16,7 @@ const search = (arr, start, end) => {
 
 class ArrayIndexElementEquality {
     static run = (arr) => {
-        if (!arr || typeof arr !== 'object' || arr.length === undefined) {
+        if (!Array.isArray(arr)) {
             return -1;
         }
 
