@@ -1,6 +1,6 @@
-import maxStockProfit from './maxStockProfit';
+import MaxStockProfit from './MaxStockProfit';
 
-describe('maxStockProfit', () => {
+describe('MaxStockProfit', () => {
     const cases = [
         [[1, 2, 3, 4, 5, 6], 5],
         [[11, 1, 2, 3, 4, 5], 4],
@@ -13,13 +13,13 @@ describe('maxStockProfit', () => {
     for (let i = 0; i < cases.length; i++) {
         const [ input, output ] = cases[i];
         it(`${input} returns ${output}`, () => {
-            expect(maxStockProfit(input)).toEqual(output);
+            expect(MaxStockProfit.run(input)).toEqual(output);
         });
     }
 
     it('throws when the input is not long enough', () => {
         const throws = () => {
-            maxStockProfit([1]);
+            MaxStockProfit.run([1]);
         };
 
         expect(throws).toThrow();

@@ -1,1 +1,1 @@
-export default from './maxStockProfit';
+export default from './MaxStockProfit';
