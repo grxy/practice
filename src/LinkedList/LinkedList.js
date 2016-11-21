@@ -115,10 +115,10 @@ class LinkedList {
 
         while (current) {
             string += current.element + (current.next ? ' n ' : '');
+            current = current.next;
         }
 
         return string;
-
     }
 }
 
