@@ -77,6 +77,20 @@ class LinkedList {
 
     isEmpty = () => this.length === 0
 
+    kthToLast = (k) => {
+        if (k < 0 || k > this.length - 1) {
+            return null;
+        }
+
+        let current = this.getHead();
+
+        for (let i = 0; i < this.length - 1 - k; i++) {
+            current = current.next;
+        }
+
+        return current;
+    }
+
     remove = (element) => {
         const index = this.indexOf(element);
         return this.removeAt(index);

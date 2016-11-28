@@ -72,6 +72,36 @@ describe('LinkedList', () => {
         });
     });
 
+    describe('kthToLast()', () => {
+        beforeEach(() => {
+            list.append(123);
+            list.append(456);
+            list.append(789);
+            list.append(0);
+            list.append(5);
+        });
+
+        it('returns null when k < 0', () => {
+            expect(list.kthToLast(-1)).toBe(null);
+        });
+
+        it('returns null when k > list length', () => {
+            expect(list.kthToLast(999)).toBe(null);
+        });
+
+        it('returns the last item when k === 0', () => {
+            expect(list.kthToLast(0).element).toBe(5);
+        });
+
+        it('returns the first item when k === length - 1', () => {
+            expect(list.kthToLast(list.size() - 1)).toBe(list.getHead());
+        });
+
+        it('returns the correct item', () => {
+            expect(list.kthToLast(1).element).toBe(0);
+        });
+    });
+
     describe('remove()', () => {
         it('removes the element', () => {
             list.append(33);
