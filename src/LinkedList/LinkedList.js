@@ -78,17 +78,23 @@ class LinkedList {
     isEmpty = () => this.length === 0
 
     kthToLast = (k) => {
-        if (k < 0 || k > this.length - 1) {
-            return null;
+        let n1 = this.getHead();
+        let n2 = this.getHead();
+
+        for (let i = 0; i <= k; i++) {
+            if (!n1) {
+                return null;
+            }
+
+            n1 = n1.next;
         }
 
-        let current = this.getHead();
-
-        for (let i = 0; i < this.length - 1 - k; i++) {
-            current = current.next;
+        while (n1) {
+            n1 = n1.next;
+            n2 = n2.next;
         }
 
-        return current;
+        return n2;
     }
 
     remove = (element) => {
