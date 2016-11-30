@@ -2,7 +2,6 @@ import * as hashes from 'hash/functions';
 import * as tables from 'HashTable';
 
 let table;
-let hash;
 
 for (const tableKey in tables) {
     const HashTable = tables[tableKey];
@@ -16,12 +15,10 @@ for (const tableKey in tables) {
             expect(throws).toThrow();
         });
 
-        for (const hashKey in hashes) {
-            hash = hashes[hashKey];
-
+        for (let hashKey in hashes) {
             describe(`with ${hashKey}() hash function`, () => {
                 beforeEach(() => {
-                    table = new HashTable(hash);
+                    table = new HashTable(hashes[hashKey]);
                 });
 
                 describe('clear()', () => {
@@ -57,8 +54,8 @@ for (const tableKey in tables) {
                 });
 
                 describe('hash()', () => {
-                    it('returns the hased value of a string', () => {
-                        expect(table.hash('test')).toBe(hash('test'));
+                    it('returns the hashed value of a string', () => {
+                        expect(table.hash('test')).toBe(hashes[hashKey]('test'));
                     });
 
                     [{}, 123, true, undefined].forEach((value) => {
