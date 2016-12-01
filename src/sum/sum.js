@@ -1,4 +1,0 @@
-const comboSumsToX = () => {
-};
-
-export { comboSumsToX };
