@@ -1,4 +1,4 @@
-import Queue from 'queue';
+import Queue from 'Queue';
 
 class Graph {
     constructor(vertices) {
